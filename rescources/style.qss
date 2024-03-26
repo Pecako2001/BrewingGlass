@@ -1,0 +1,14 @@
+
+/* Reference to : https://doc.qt.io/qt-6/stylesheet-reference.html#list-of-properties */
+#Background {
+    background-color: #1a1a1a;
+}
+
+#AddButton {
+    background-color: #438eff;
+    border-radius: 20px;
+}
+
+#AddButton:hover {
+    background-color: #3b7dd8;
+}

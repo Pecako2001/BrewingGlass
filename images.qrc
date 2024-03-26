@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="rescources">
+    <file>rescources/icons/Plus.png</file>
+    <file>rescources/languages/vlag nederlands.png</file>
+    <file>rescources/languages/vlag pools.png</file>
+    <file>rescources/languages/Vlag engels.png</file>
+  </qresource>
+</RCC>
