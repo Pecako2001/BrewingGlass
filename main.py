@@ -9,8 +9,11 @@ from UI.pagesetup_ui import Ui_MainWindow
 # Libraries imports
 import sys, os
 import rescources
-
 # Local imports
+from source.sql import createdatabase
+if not os.path.exists("data.sqlite"):
+    createdatabase()
+
 from config import LANGUAGE
 from pages.Addition_Page import Addition
 from pages.Overview_Page import Overview
