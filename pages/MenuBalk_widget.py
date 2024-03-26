@@ -5,7 +5,7 @@ from UI.MenuBalk_ui import Ui_MenuBalk  # Adjust the import path according to yo
 
 import webbrowser
 
-ANIMATION_DURATION = 250  # Animation duration in milliseconds
+ANIMATION_DURATION = 175  # Animation duration in milliseconds
 
 class UserWidget(QDialog, Ui_MenuBalk):
     requestPageChange = Signal(str)
@@ -13,12 +13,22 @@ class UserWidget(QDialog, Ui_MenuBalk):
         super(UserWidget, self).__init__(parent)
         self.setupUi(self)
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
+        # Create a dictionary that maps page names to buttons
+        self.page_buttons = {
+            'Overview': self.GlassesPage,
+            'Explore': self.ExplorePage,
+            'Wishlist': self.WishlistPage,
+            'Settings': self.SettingsPage,
+            'About': self.OverPage,
+        }
         # Connect all the buttons on this page
-        self.GlassesPage.clicked.connect(lambda: self.requestPageChange.emit('Overview'))
-        self.ExplorePage.clicked.connect(lambda: self.requestPageChange.emit('Addition'))
-        self.WishlistPage.clicked.connect(lambda: self.requestPageChange.emit('Overview'))
-        self.SettingsPage.clicked.connect(lambda: self.requestPageChange.emit('Addition'))
-        self.OverPage.clicked.connect(lambda: webbrowser.open('https://github.com/Pecako2001/BrewingGlass'))
+        self.GlassesPage.clicked.connect(lambda: self.changePage('Overview'))
+        self.ExplorePage.clicked.connect(lambda: self.changePage('Explore'))
+        self.WishlistPage.clicked.connect(lambda: self.changePage('Wishlist'))
+        self.SettingsPage.clicked.connect(lambda: self.changePage('Settings'))
+        self.OverPage.clicked.connect(lambda: self.changePage('About'))
+        self.Changelog.clicked.connect(lambda: webbrowser.open('https://github.com/Pecako2001/BrewingGlass/blob/main/CHANGELOG.md'))
+        self.Contact.clicked.connect(lambda: webbrowser.open('mailto:koenvanwijlick@gmail.com?subject=GlassApplication'))
         # Assuming your UI design has these dimensions or set them as needed
         self.targetWidth = 200  # Width of the UserWidget
         self.startPosition = QRect(-self.targetWidth, 0, self.targetWidth, parent.height())
@@ -38,6 +48,11 @@ class UserWidget(QDialog, Ui_MenuBalk):
         self.animationOut.setEndValue(self.startPosition)
         self.animationOut.finished.connect(self.onAnimationOutFinished)
 
+    def changePage(self, page_name):
+        """Emit the signal to change the page and animate the UserWidget in."""
+        self.animateOut()
+        self.requestPageChange.emit(page_name)
+
     def animateIn(self):
         """Animate the UserWidget in from the left side of the parent widget."""
         self.show()
@@ -52,3 +67,21 @@ class UserWidget(QDialog, Ui_MenuBalk):
     def onAnimationOutFinished(self):
         """Hide the UserWidget after the animation is complete."""
         self.hide()
+
+    def setActivePage(self, page_name):
+        """Set the active page button style."""
+        # Reset all buttons to their default style
+        for button in self.page_buttons.values():
+            button.setObjectName('')
+            button.style().unpolish(button)  # Unpolish to ensure QSS is reapplied
+            button.style().polish(button)    # Reapply QSS
+
+        # Set the active page button style
+        active_button = self.page_buttons.get(page_name)
+        if active_button:
+            active_button.setObjectName('ActivePageButton')
+            active_button.style().unpolish(active_button)  # Unpolish to ensure QSS is reapplied
+            active_button.style().polish(active_button)    # Reapply QSS
+
+        # Reapply the stylesheet to update the styles
+        self.setStyleSheet(self.styleSheet())

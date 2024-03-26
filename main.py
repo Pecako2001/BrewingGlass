@@ -12,9 +12,13 @@ import rescources
 
 # Local imports
 from config import LANGUAGE
-from pages.Addition import Addition
-from pages.Overview import Overview
+from pages.Addition_Page import Addition
+from pages.Overview_Page import Overview
 from pages.MenuBalk_widget import UserWidget
+from pages.Explore_Page import Explore
+from pages.About_page import About
+from pages.Settings_Page import Settings
+from pages.Wishlist_Page import Wishlist    
 
 # Code for page
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -27,11 +31,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Create the UserWidget and connect the signal to change pages
         self.userWidget = UserWidget(self)
         self.userWidget.requestPageChange.connect(self.changePage)
-        
+
         # Dictionary to hold the pages
         self.pages = {
             'Overview': Overview(self.PageSetup),
             'Addition': Addition(self.PageSetup),
+            'Explore': Explore(self.PageSetup),
+            'About': About(self.PageSetup),
+            'Settings': Settings(self.PageSetup),
+            'Wishlist': Wishlist(self.PageSetup),
         }
 
         # Add pages to the QStackedWidget
@@ -41,10 +49,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.pages['Overview'].requestPageChange.connect(self.changePage)
         self.pages['Addition'].requestPageChange.connect(self.changePage)
+        self.pages['Explore'].requestPageChange.connect(self.changePage)
+        self.pages['Addition'].requestPageChange.connect(self.pages['Explore'].refreshGlassesDisplay)
 
         self.MenuButton.clicked.connect(self.showUserWidget)
-
-        self.changePage("Overview")
+        self.changePage("Explore")
         self.show()
 
     def changePage(self, page_name):
@@ -54,6 +63,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             index = self.PageSetup.indexOf(page)
             self.PageSetup.setCurrentIndex(index)
             self.PageName.setText(page_name)
+            self.userWidget.setActivePage(page_name)  
         else:
             print(f"Page {page_name} not found.")
 
@@ -69,6 +79,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         return super(MainWindow, self).eventFilter(source, event)
 
     def showUserWidget(self):
+        """Show the UserWidget and animate it in."""
         self.userWidget.animateIn()
 
 if __name__ == "__main__":

@@ -1,21 +1,19 @@
 
 /* Reference to : https://doc.qt.io/qt-6/stylesheet-reference.html#list-of-properties */
-#Background, #MenuBalk {
+#Background, #MenuBalk, #scrollArea  {
     background-color: #1a1a1a;
 }
 
-#AddButton {
-    background-color: #438eff;
-    border-radius: 20px;
+#SearchBar {
+    border-radius: 10px;
 }
-
-#AddButton:hover {
-    background-color: #3b7dd8;
-}
-
 
 #Balk_Boven, #NameLabel  {
     background-color: #2c2c2c;
+}
+
+#Text {
+    color: gray;
 }
 
 QPushButton:hover {
@@ -26,4 +24,34 @@ QPushButton:hover {
 QPushButton {
     background-color: transparent;
     border-radius: 20px;
+}
+
+#glassLabel {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    margin: 10px;
+}
+
+#Submit, #AddButton {
+    color: black;
+    background-color: #ffce48;
+    border-radius: 20px;
+}
+
+#Submit:hover, #AddButton:hover {
+    color: black;
+    background-color: #ffc831;
+    border-radius: 20px;
+} 
+#ActivePageButton {
+    color: rgba(224, 177, 45, 255); /* Example blue color for active state */
+    /* other styles to make the button stand out as active */
+}
+
+#glassWidget {
+    /* Styling for each glass widget */
+    background-color: #4b4b4b; /* Light gray background */
+    margin-bottom: 2px; /* Keep a minimal margin between widgets */
+    border-radius: 20px; /* Rounded corners */
 }

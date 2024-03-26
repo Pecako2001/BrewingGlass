@@ -54,7 +54,7 @@
        </size>
       </property>
       <property name="text">
-       <string>Glasses</string>
+       <string>Overview</string>
       </property>
      </widget>
     </item>
@@ -109,6 +109,28 @@
        </size>
       </property>
      </spacer>
+    </item>
+    <item>
+     <widget class="QLabel" name="Text">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>URW Bookman [UKWN]</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>    GlassTapped</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QPushButton" name="OverPage">

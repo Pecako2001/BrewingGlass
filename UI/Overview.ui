@@ -31,75 +31,21 @@
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>30</y>
-     <width>200</width>
-     <height>200</height>
+     <x>0</x>
+     <y>0</y>
+     <width>389</width>
+     <height>779</height>
     </rect>
    </property>
    <property name="text">
-    <string>Your Glasses</string>
+    <string>Overview placeholder</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>280</y>
-     <width>200</width>
-     <height>200</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Explore</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>530</y>
-     <width>200</width>
-     <height>200</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Wishlist</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="AddButton">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>730</y>
-     <width>40</width>
-     <height>40</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Ubuntu Thin</family>
-     <pointsize>28</pointsize>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset resource="../images.qrc">
-     <normaloff>:/rescources/rescources/icons/Plus.png</normaloff>:/rescources/rescources/icons/Plus.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>25</width>
-     <height>25</height>
-    </size>
-   </property>
-  </widget>
+  <zorder>label_2</zorder>
+  <zorder>Background</zorder>
  </widget>
  <resources>
   <include location="../images.qrc"/>

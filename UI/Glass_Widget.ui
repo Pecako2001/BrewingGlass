@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Glass_Widget</class>
+ <widget class="QWidget" name="Glass_Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>379</width>
+    <height>120</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="Brewery">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>20</y>
+     <width>250</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Brewery</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="GlassType">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>45</y>
+     <width>250</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>GlassType</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="GlassType_2">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>75</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Amount:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Amount">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>75</y>
+     <width>100</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Amount</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Image">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>75</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Image</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -68,6 +68,17 @@ class Ui_MenuBalk(object):
 
         self.verticalLayout.addItem(self.verticalSpacer)
 
+        self.Text = QLabel(self.verticalLayoutWidget)
+        self.Text.setObjectName(u"Text")
+        self.Text.setMinimumSize(QSize(0, 25))
+        font1 = QFont()
+        font1.setFamilies([u"URW Bookman [UKWN]"])
+        font1.setPointSize(11)
+        self.Text.setFont(font1)
+        self.Text.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout.addWidget(self.Text)
+
         self.OverPage = QPushButton(self.verticalLayoutWidget)
         self.OverPage.setObjectName(u"OverPage")
         self.OverPage.setMinimumSize(QSize(0, 50))
@@ -101,10 +112,11 @@ class Ui_MenuBalk(object):
     def retranslateUi(self, MenuBalk):
         MenuBalk.setWindowTitle(QCoreApplication.translate("MenuBalk", u"Form", None))
         self.NameLabel.setText(QCoreApplication.translate("MenuBalk", u"GlassTapped", None))
-        self.GlassesPage.setText(QCoreApplication.translate("MenuBalk", u"Glasses", None))
+        self.GlassesPage.setText(QCoreApplication.translate("MenuBalk", u"Overview", None))
         self.ExplorePage.setText(QCoreApplication.translate("MenuBalk", u"Explore", None))
         self.WishlistPage.setText(QCoreApplication.translate("MenuBalk", u"Wishlist", None))
         self.SettingsPage.setText(QCoreApplication.translate("MenuBalk", u"Settings", None))
+        self.Text.setText(QCoreApplication.translate("MenuBalk", u"    GlassTapped", None))
         self.OverPage.setText(QCoreApplication.translate("MenuBalk", u"Over", None))
         self.Contact.setText(QCoreApplication.translate("MenuBalk", u"Contact", None))
         self.Changelog.setText(QCoreApplication.translate("MenuBalk", u"Changelog", None))
