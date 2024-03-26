@@ -1,8 +1,2 @@
-scrypt ==0.8.20 #https://pypi.org/project/scrypt/
-PySide6 == 6.6.1 #https://pypi.org/project/PySide6/
-opencv-python #https://pypi.org/project/opencv-python/
-supervision == 0.17.1 #https://pypi.org/project/supervision/
-numpy ==1.26.3 #https://pypi.org/project/numpy/
-ultralytics == 8.1.2 #https://pypi.org/project/ultralytics/
-depthai 
-shapely
+PySide6
+pyinstaller

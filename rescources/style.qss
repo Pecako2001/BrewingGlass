@@ -1,6 +1,6 @@
 
 /* Reference to : https://doc.qt.io/qt-6/stylesheet-reference.html#list-of-properties */
-#Background {
+#Background, #MenuBalk {
     background-color: #1a1a1a;
 }
 
@@ -11,4 +11,19 @@
 
 #AddButton:hover {
     background-color: #3b7dd8;
+}
+
+
+#Balk_Boven, #NameLabel  {
+    background-color: #2c2c2c;
+}
+
+QPushButton:hover {
+    background-color: #4b4b4b;
+    border-radius: 20px;
+}
+
+QPushButton {
+    background-color: transparent;
+    border-radius: 20px;
 }

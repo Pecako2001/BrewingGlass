@@ -17,76 +17,11 @@
    <widget class="QStackedWidget" name="PageSetup">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>0</y>
-      <width>349</width>
-      <height>844</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="NL">
-    <property name="geometry">
-     <rect>
-      <x>590</x>
-      <y>20</y>
-      <width>38</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="../images.qrc">
-      <normaloff>:/rescources/rescources/languages/vlag nederlands.png</normaloff>:/rescources/rescources/languages/vlag nederlands.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>40</width>
-      <height>40</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QLabel" name="DateTimeLabel">
-    <property name="geometry">
-     <rect>
-      <x>1030</x>
-      <y>40</y>
-      <width>161</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>13.02.2024 | 9:47</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="EN_active">
-    <property name="geometry">
-     <rect>
-      <x>765</x>
-      <y>60</y>
-      <width>8</width>
-      <height>8</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Background">
-    <property name="geometry">
-     <rect>
       <x>0</x>
-      <y>0</y>
+      <y>50</y>
       <width>399</width>
-      <height>844</height>
+      <height>789</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #FBB117;</string>
-    </property>
-    <property name="text">
-     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="Balk_Boven">
@@ -94,158 +29,66 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>50</width>
-      <height>844</height>
+      <width>399</width>
+      <height>50</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: #f28e1c;</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="Bottom_1">
+   <widget class="QPushButton" name="MenuButton">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>970</y>
-      <width>38</width>
-      <height>38</height>
+      <x>10</x>
+      <y>5</y>
+      <width>40</width>
+      <height>40</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Ubuntu Thin</family>
+      <pointsize>28</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../images.qrc">
+      <normaloff>:/rescources/rescources/icons/three_stripes.png</normaloff>:/rescources/rescources/icons/three_stripes.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="Exit">
+   <widget class="QLabel" name="PageName">
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>970</y>
-      <width>38</width>
-      <height>38</height>
+      <y>0</y>
+      <width>200</width>
+      <height>50</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Exit</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="PL">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>20</y>
-      <width>38</width>
-      <height>38</height>
-     </rect>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="../images.qrc">
-      <normaloff>:/rescources/rescources/languages/vlag pools.png</normaloff>:/rescources/rescources/languages/vlag pools.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>40</width>
-      <height>40</height>
-     </size>
+     <string>PageName</string>
     </property>
    </widget>
-   <widget class="QLabel" name="NL_active">
-    <property name="geometry">
-     <rect>
-      <x>605</x>
-      <y>60</y>
-      <width>8</width>
-      <height>8</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="EN">
-    <property name="geometry">
-     <rect>
-      <x>750</x>
-      <y>20</y>
-      <width>38</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="../images.qrc">
-      <normaloff>:/rescources/rescources/languages/Vlag engels.png</normaloff>:/rescources/rescources/languages/Vlag engels.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>40</width>
-      <height>40</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QLabel" name="PL_active">
-    <property name="geometry">
-     <rect>
-      <x>685</x>
-      <y>60</y>
-      <width>8</width>
-      <height>8</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Bottom_2">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>970</y>
-      <width>38</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="Balk_onder">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>951</y>
-      <width>1280</width>
-      <height>73</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="../images.qrc">:/rescources/rescources/overview/balk ondersvg.svg</pixmap>
-    </property>
-   </widget>
-   <zorder>Background</zorder>
-   <zorder>Balk_onder</zorder>
-   <zorder>PageSetup</zorder>
-   <zorder>NL</zorder>
-   <zorder>DateTimeLabel</zorder>
-   <zorder>EN_active</zorder>
-   <zorder>Bottom_1</zorder>
-   <zorder>Exit</zorder>
-   <zorder>PL</zorder>
-   <zorder>NL_active</zorder>
-   <zorder>EN</zorder>
-   <zorder>PL_active</zorder>
-   <zorder>Bottom_2</zorder>
-   <zorder>Balk_Boven</zorder>
   </widget>
  </widget>
  <resources>

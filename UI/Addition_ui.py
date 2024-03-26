@@ -23,13 +23,13 @@ class Ui_Addition(object):
     def setupUi(self, Addition):
         if not Addition.objectName():
             Addition.setObjectName(u"Addition")
-        Addition.resize(349, 844)
+        Addition.resize(399, 789)
         self.Background = QLabel(Addition)
         self.Background.setObjectName(u"Background")
-        self.Background.setGeometry(QRect(0, 0, 349, 844))
+        self.Background.setGeometry(QRect(0, 0, 399, 789))
         self.Submit = QPushButton(Addition)
         self.Submit.setObjectName(u"Submit")
-        self.Submit.setGeometry(QRect(80, 760, 200, 50))
+        self.Submit.setGeometry(QRect(110, 720, 200, 50))
         self.label = QLabel(Addition)
         self.label.setObjectName(u"label")
         self.label.setGeometry(QRect(50, 580, 191, 25))
