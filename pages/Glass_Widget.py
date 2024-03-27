@@ -3,7 +3,7 @@ from PySide6.QtWidgets import QDialog, QApplication, QMainWindow
 from UI.Glass_Widget_ui import Ui_Glass_Widget  # Adjust the import path
 
 # Import the deletion widget class
-from pages.Deletetion_Widget import UserWidget  # Assuming Deletion_Widget.py is in the same directory
+from pages.Deletion_Widget import UserWidget  # Assuming Deletion_Widget.py is in the same directory
 
 # Local imports
 import sqlite3
@@ -11,17 +11,19 @@ import sqlite3
 ANIMATION_DURATION = 150  # Animation duration in milliseconds
 
 class Glass_Widget(QDialog, Ui_Glass_Widget):
-    BrewInformation = Signal(list)
     glassUpdated = Signal(str, str, int)
+    BrewInformation = Signal(list)
     def __init__(self, parent=None):
         super(Glass_Widget, self).__init__(parent)
         self.setupUi(self)
         self.deletion_widget = UserWidget(self)
         QApplication.instance().installEventFilter(self)
-
+        self.deletion_widget.glassUpdated.connect(self.update_glass_amount)
         # Connect the click signal to a slot (replace with your actual logic)
         self.Extend.clicked.connect(self.on_glass_clicked)
-
+    def update_glass_amount(self, brewery, glass_type, amount):
+        self.glassUpdated.emit(brewery, glass_type, amount)
+        
     def on_glass_clicked(self):
         print(f"Glass clicked for {self.Brewery.text()}, {self.GlassType.text()}")
         self.deletion_widget.setObjectName("deleteWidget")

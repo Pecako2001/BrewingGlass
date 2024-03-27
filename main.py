@@ -64,7 +64,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """Find the index of the page by name and set it as the current page."""
         page = self.pages.get(page_name)
         if page == self.pages['Overview']:
-            page.Updatetags()
+            print("Here")
+            self.pages['Overview'].Updatetags()
         if page:
             index = self.PageSetup.indexOf(page)
             self.PageSetup.setCurrentIndex(index)

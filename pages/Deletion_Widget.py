@@ -7,6 +7,7 @@ import sqlite3
 ANIMATION_DURATION = 175  # Animation duration in milliseconds
 
 class UserWidget(QDialog, Ui_Deletion_Widget):
+    glassUpdated = Signal(str, str, int)
     def __init__(self, parent=None):
         super(UserWidget, self).__init__(parent)
         self.setupUi(self)
@@ -79,7 +80,7 @@ class UserWidget(QDialog, Ui_Deletion_Widget):
             glass_type (str): Type of the glass.
             new_amount (int): The new amount of glasses.
         """
-
+        self.glassUpdated.emit(brewery, glass_type, new_amount)
         # Replace with your actual logic to connect to database and update amount
         conn = sqlite3.connect('data.sqlite')
         cursor = conn.cursor()

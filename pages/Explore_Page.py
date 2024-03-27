@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QWidget, QVBoxLayout, QScrollArea, QApplication
-from PySide6.QtCore import Qt, Signal, QEvent
+from PySide6.QtCore import Qt, Signal, QEvent, Slot
 import sqlite3
 
 from UI.Explore_ui import Ui_Explore 
@@ -50,7 +50,7 @@ class Explore(QWidget, Ui_Explore):
         # Instantiate the custom widget
         self.glass_widget = Glass_Widget()
         self.glass_widget.setObjectName("glassWidget")  # For styling in QSS
-
+        self.glass_widget.glassUpdated.connect(self.on_glass_updated)
         # Set fixed heights for the widget
         self.glass_widget.setMinimumHeight(120)  # Minimum height
         self.glass_widget.setMaximumHeight(120)  # Maximum height to make all widgets uniform in size
@@ -83,3 +83,12 @@ class Explore(QWidget, Ui_Explore):
                 # If the search query is in the brewery name, show the widget, otherwise hide it
                 brewery_name = widget.Brewery.text().lower()
                 widget.setVisible(query.lower() in brewery_name)
+
+    def on_glass_updated(self, brewery, glass_type, new_amount):
+        for i in range(self.scroll_layout.count()):
+            widget = self.scroll_layout.itemAt(i).widget()
+            if widget and widget.Brewery.text() == brewery and widget.GlassType.text() == glass_type:
+                widget.Amount.setText(str(new_amount))
+                return  # Exit the loop after finding and updating the matching widget
+        # Widget not found (for debugging purposes)
+        print(f"Glass for brewery '{brewery}' and type '{glass_type}' not found in explore page.")
