@@ -28,7 +28,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.PageSetup = QStackedWidget(self.centralwidget)
         self.PageSetup.setObjectName(u"PageSetup")
-        self.PageSetup.setGeometry(QRect(0, 50, 399, 789))
+        self.PageSetup.setGeometry(QRect(0, 50, 399, 800))
         self.Balk_Boven = QLabel(self.centralwidget)
         self.Balk_Boven.setObjectName(u"Balk_Boven")
         self.Balk_Boven.setGeometry(QRect(0, 0, 399, 50))

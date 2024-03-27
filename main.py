@@ -53,15 +53,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pages['Overview'].requestPageChange.connect(self.changePage)
         self.pages['Addition'].requestPageChange.connect(self.changePage)
         self.pages['Explore'].requestPageChange.connect(self.changePage)
+        self.pages['Wishlist'].requestPageChange.connect(self.changePage)
         self.pages['Addition'].requestPageChange.connect(self.pages['Explore'].refreshGlassesDisplay)
 
         self.MenuButton.clicked.connect(self.showUserWidget)
-        self.changePage("Explore")
+        self.changePage("Overview")
         self.show()
 
     def changePage(self, page_name):
         """Find the index of the page by name and set it as the current page."""
         page = self.pages.get(page_name)
+        if page == self.pages['Overview']:
+            page.Updatetags()
         if page:
             index = self.PageSetup.indexOf(page)
             self.PageSetup.setCurrentIndex(index)
@@ -75,7 +78,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if event.type() == QEvent.MouseButtonPress and self.userWidget.isVisible():
             # Convert the globalPosition (QPointF) to QPoint
             globalPos = event.globalPosition().toPoint()
-            
             # Check if the click is outside the UserWidget
             if not self.userWidget.geometry().contains(self.userWidget.mapFromGlobal(globalPos)):
                 self.userWidget.animateOut()

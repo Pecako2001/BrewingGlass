@@ -1,5 +1,5 @@
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QScrollArea
-from PySide6.QtCore import Qt, Signal
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QScrollArea, QApplication
+from PySide6.QtCore import Qt, Signal, QEvent
 import sqlite3
 
 from UI.Explore_ui import Ui_Explore 
@@ -7,7 +7,6 @@ from pages.Glass_Widget import Glass_Widget  # Ensure this is the correct path
 
 class Explore(QWidget, Ui_Explore):
     requestPageChange = Signal(str)
-    
     def __init__(self, parent=None):
         super(Explore, self).__init__(parent)
         self.setupUi(self)
@@ -34,6 +33,8 @@ class Explore(QWidget, Ui_Explore):
 
         self.scroll_layout.setSpacing(0)  # Minimize spacing between widgets
         self.scroll_layout.setContentsMargins(0, 0, 0, 0)  # Minimize margins of the layout
+        self.scroll_layout.addStretch(1)
+
         # Ensure that vertical scrolling is enabled
         self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)   
         self.scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
@@ -47,20 +48,20 @@ class Explore(QWidget, Ui_Explore):
 
     def addGlassWidget(self, glass):
         # Instantiate the custom widget
-        glass_widget = Glass_Widget()
-        glass_widget.setObjectName("glassWidget")  # For styling in QSS
+        self.glass_widget = Glass_Widget()
+        self.glass_widget.setObjectName("glassWidget")  # For styling in QSS
 
         # Set fixed heights for the widget
-        glass_widget.setMinimumHeight(120)  # Minimum height
-        glass_widget.setMaximumHeight(120)  # Maximum height to make all widgets uniform in size
+        self.glass_widget.setMinimumHeight(120)  # Minimum height
+        self.glass_widget.setMaximumHeight(120)  # Maximum height to make all widgets uniform in size
 
         # Set the content of the labels
-        glass_widget.Brewery.setText(glass[1])  # Assuming glass[1] is the brewery name
-        glass_widget.GlassType.setText(glass[2])  # Assuming glass[2] is the glass type
-        glass_widget.Amount.setText(str(glass[3]))  # Assuming glass[3] is the amount
+        self.glass_widget.Brewery.setText(glass[1])  # Assuming glass[1] is the brewery name
+        self.glass_widget.GlassType.setText(glass[2])  # Assuming glass[2] is the glass type
+        self.glass_widget.Amount.setText(str(glass[3]))  # Assuming glass[3] is the amount
 
         # Add the custom beer item to the scroll layout
-        self.scroll_layout.addWidget(glass_widget)
+        self.scroll_layout.addWidget(self.glass_widget)
 
     def refreshGlassesDisplay(self):
         # Clear the existing widgets in the layout

@@ -55,3 +55,22 @@ QPushButton {
     margin-bottom: 2px; /* Keep a minimal margin between widgets */
     border-radius: 20px; /* Rounded corners */
 }
+
+#AnimationWidget {
+    /* Styling for the animation widget */
+    background-color: #4b4b4b; /* Light gray background */
+    margin-bottom: 2px; /* Keep a minimal margin between widgets */
+    border-radius: 20px; /* Rounded corners */
+}
+
+#Deletion {
+    color: black;
+    background-color: #ff0000;
+    border-radius: 20px;
+}
+
+#MinusButton, #PlusButton {
+    color: black;
+    background-color: #2c2c2c;
+    border-radius: 20px;
+}

@@ -19,11 +19,20 @@ def createdatabase():
         amount INTEGER NOT NULL CHECK (amount >= 0)
     )
     '''
-
     # Execute the SQL command
     cursor.execute(sql)
-
     # Commit the changes
+    conn.commit()
+    sql = '''
+    CREATE TABLE wish_data (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        brewery TEXT NOT NULL,
+        type TEXT NOT NULL,
+        amount INTEGER NOT NULL CHECK (amount >= 0)
+    )
+    '''
+    # Execute the SQL command
+    cursor.execute(sql)
     conn.commit()
 
     # Close the cursor and connection
